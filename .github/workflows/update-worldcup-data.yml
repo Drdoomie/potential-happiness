@@ -21,7 +21,7 @@ jobs:
           node-version: "22"
 
       - name: Refresh data
-        run: node scripts/update-worldcup-data.mjs
+        run: node world_cup_2026_web_app/scripts/update-worldcup-data.mjs
         env:
           WORLD_CUP_DATA_URL: ${{ secrets.WORLD_CUP_DATA_URL }}
 
@@ -29,4 +29,4 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "Update World Cup data"
-          file_pattern: data.json
+          file_pattern: world_cup_2026_web_app/data.json
